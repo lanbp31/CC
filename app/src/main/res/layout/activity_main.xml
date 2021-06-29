@@ -25,7 +25,6 @@
         android:text="C"
         android:textColor="#2A3137"
         android:textSize="100sp"
-        android:textAppearance="C"
         android:gravity="top"
         />
 
@@ -50,7 +49,6 @@
             android:textSize="100sp"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textAppearance="mei"
             android:gravity="top" />
 
         <Button
