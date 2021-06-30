@@ -14,7 +14,6 @@
         android:layout_marginLeft="32dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="32dp"
-
         android:background="@drawable/action_close"
         android:orientation="horizontal">
     </LinearLayout>
@@ -35,7 +34,6 @@
             android:textAlignment="center"
             android:textColor="#E1512C"
             android:textSize="42sp"
-
             android:gravity="top"
             tools:ignore="RtlCompat" />
         <ImageView
