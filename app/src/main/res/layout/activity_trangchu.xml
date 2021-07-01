@@ -92,7 +92,7 @@
             />
 
         <Button
-            android:id="@+id/logoutBtn"
+            android:id="@+id/manageBtn"
             android:layout_width="180sp"
             android:layout_height="120sp"
             android:layout_below="@id/userinfoBtn"
