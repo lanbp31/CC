@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThemNhanVien"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="114dp"
+        android:background="#2A3137">
+        <TextView
+            android:layout_width="285dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="64dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="45dp"
+            android:text="Thêm nhân viên"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:gravity="center_horizontal|center_vertical" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="115dp"
+        android:layout_marginLeft="-410dp">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:text="Tên đăng nhập"
+            android:textColor="#C4C4C4" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@id/username"
+            android:text="Mật khẩu"
+            android:textColor="#C4C4C4" />
+        <!--suppress AndroidDomInspection -->
+        <Spinner
+            android:id="@+id/static_spinner"
+            android:layout_below="@+id/password"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:entries="@array/spinner_data"/>
+        <Spinner
+            android:id="@+id/dynamic_spinner"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/static_spinner"
+            android:entries="@array/spinner_data"/>
+        <Button
+            android:id="@+id/btnThem"
+            android:layout_width="150dp"
+            android:layout_height="52dp"
+            android:layout_below="@+id/dynamic_spinner"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/black"
+            android:text="THÊM"
+            android:textColor="#E1512C"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
