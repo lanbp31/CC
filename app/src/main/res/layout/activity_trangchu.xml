@@ -71,7 +71,7 @@
             android:layout_marginLeft="20dp"
             />
         <Button
-            android:id="@+id/btnhome2"
+            android:id="@+id/userinfoBtn"
             android:layout_width="180sp"
             android:layout_height="120sp"
             android:backgroundTint="@color/black"
@@ -81,7 +81,7 @@
             android:layout_toRightOf="@id/scanBtn"
             />
         <Button
-            android:id="@+id/btnhome3"
+            android:id="@+id/historyBtn"
             android:layout_width="180sp"
             android:layout_height="120sp"
             android:backgroundTint="@color/black"
@@ -90,17 +90,18 @@
             android:layout_marginLeft="20dp"
             android:layout_below="@id/scanBtn"
             />
+
         <Button
-            android:id="@+id/btnhome4"
+            android:id="@+id/logoutBtn"
             android:layout_width="180sp"
             android:layout_height="120sp"
+            android:layout_below="@id/userinfoBtn"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/historyBtn"
             android:backgroundTint="@color/black"
             android:text="ĐĂNG XUẤT"
-            android:textAlignment="center"
-            android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@id/btnhome3"
-            android:layout_below="@id/btnhome2"
-            />
+            android:textAlignment="center" />
     </RelativeLayout>
 
 </LinearLayout>
