@@ -6,48 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".Dangnhap"
     android:orientation="horizontal">
-    <LinearLayout
-        android:id="@+id/action_clos"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="32dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
 
-        android:background="@drawable/action_close"
-        android:orientation="horizontal">
-    </LinearLayout>
+
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginLeft="-85dp"
+        android:layout_width="wrap_content"
+        android:layout_height="94dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="150dp">
+
         <TextView
             android:id="@+id/text1"
             android:layout_width="320dp"
             android:layout_height="60dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="55dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="25dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="46dp"
             android:text="ĐĂNG NHẬP"
             android:textAlignment="center"
             android:textColor="#E1512C"
             android:textSize="42sp"
-
-            android:gravity="top"
             tools:ignore="RtlCompat" />
+
         <ImageView
             android:id="@+id/line_1"
             android:layout_width="289dp"
             android:layout_height="0dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="-300dp"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="-300dp"
             android:layout_marginTop="56dp"
-            android:background="@drawable/line_1"
-            />
+            android:background="@drawable/line_1" />
     </RelativeLayout>
 
     <LinearLayout
