@@ -5,7 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="app_name">Cham Cong</string>
 
-    <string-array name="spinner_data"> Chức vụ
+    <string-array name="spinner_data">Chức vụ
         <item>Cappuccino</item>
         <item>Espresso</item>
         <item>Mocha</item>
