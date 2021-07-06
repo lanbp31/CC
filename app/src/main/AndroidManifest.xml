@@ -2,26 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chamcong">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <application
+   <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChamCong">
-        <activity android:name=".Dangnhap"></activity>
-        <activity android:name=".ThemNhanVien"></activity>
-        <activity android:name=".TestTabLayoutActivity"></activity>
+        <activity android:name=".ThemNhanVien"/>
+        <activity android:name=".TestTabLayoutActivity"/>
         <activity android:name=".Lichsuchamcong" />
         <activity android:name=".Doimatkhau" />
         <activity android:name=".Thongtinuser" />
         <activity android:name=".ScanQR" />
         <activity android:name=".TrangchuAdmin" />
         <activity android:name=".Trangchu" />
-        <activity android:name=".Dang" />
+        <activity android:name=".Dangnhap" />
+       <activity android:name=".Xoachucvu" />
+       <activity android:name=".Xoanhanvien" />
+       <activity android:name=".Suachucvu" />
+       <activity android:name=".Themchucvu" />
+       <activity android:name=".Quanlychucvu" />
+       <activity android:name=".Quanlynhanvien" />
+       <activity android:name=".Dieuchinhnhanvien" />
 
         <meta-data
             android:name="com.google.android.actions"
@@ -34,6 +37,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>
