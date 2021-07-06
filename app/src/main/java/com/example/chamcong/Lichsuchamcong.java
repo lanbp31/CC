@@ -10,14 +10,12 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 public class Lichsuchamcong extends AppCompatActivity {
-
     private ViewPager pager;
     private TabLayout tabLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lichsuchamcong);
+        setContentView(R.layout.activity_test_tab_layout);
         addControl();
     }
 
@@ -31,5 +29,6 @@ public class Lichsuchamcong extends AppCompatActivity {
         tabLayout.setupWithViewPager(pager);
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setTabsFromPagerAdapter(adapter);//deprecated
+        //   tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(ViewPager));
     }
 }
