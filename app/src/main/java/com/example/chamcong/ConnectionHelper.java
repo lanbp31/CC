@@ -7,16 +7,16 @@ import android.util.Log;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class ConnectionHelper {
-    @SuppressLint("NewApi")
-    public Connection conn() {
 
-        String username = "";
-        String password = "";
-        String db = "";
-        String ip = "";
+    static String username = "sa";
+    static String password = "bplan311";
+    static String db = "Db_chamcong";
+    static String ip = "192.168.0.115";
+
+    @SuppressLint("NewApi")
+    public static Connection CONN() {
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                 .permitAll().build();

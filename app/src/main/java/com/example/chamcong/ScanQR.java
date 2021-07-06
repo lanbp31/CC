@@ -61,6 +61,8 @@ public class ScanQR extends AppCompatActivity {
             public void onClick(View v) {
                 resultData.setText("Bạn đã chấm công thành công");
             }
+
+
         });
     }
 
@@ -90,6 +92,7 @@ public class ScanQR extends AppCompatActivity {
             }
         }).check();
     }
+
 
 
 }

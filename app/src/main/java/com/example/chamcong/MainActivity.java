@@ -1,19 +1,25 @@
 package com.example.chamcong;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
-    String DB_NAME = "dbchamcong.db";
-    Button btnlogin, btnmagr;
-    SQLiteDatabase db;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button BtnDangnhap;
+        BtnDangnhap = findViewById(R.id.btnDN);
+
+        BtnDangnhap.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Dangnhap.class);
+            startActivity(intent);
+        });
+
     }
 }
