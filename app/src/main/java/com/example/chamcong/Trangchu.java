@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.parse.ParseUser;
 
 public class Trangchu extends AppCompatActivity {
     Button scanBtn, logoutBtn, historyBtn, infoBtn;
@@ -32,6 +31,7 @@ public class Trangchu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Trangchu.this, Lichsuchamcong.class);
+                startActivity(i);
             }
         });
 
@@ -39,22 +39,23 @@ public class Trangchu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Trangchu.this, Thongtinuser.class);
+                startActivity(i);
             }
         });
 
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // calling a method to logout our user.
-                ParseUser.logOutInBackground(e -> {
-                    if (e == null) {
-                        Toast.makeText(Trangchu.this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent(Trangchu.this, MainActivity.class);
-                        startActivity(i);
-                        finish();
-                    }
-                });
-            }
-        });
+//        logoutBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // calling a method to logout our user.
+//                ParseUser.logOutInBackground(e -> {
+//                    if (e == null) {
+//                        Toast.makeText(Trangchu.this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
+//                        Intent i = new Intent(Trangchu.this, MainActivity.class);
+//                        startActivity(i);
+//                        finish();
+//                    }
+//                });
+//            }
+//        });
     }
 }

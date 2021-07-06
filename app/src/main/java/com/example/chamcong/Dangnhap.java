@@ -8,14 +8,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.parse.ParseUser;
+//import com.parse.ParseUser;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Dangnhap extends AppCompatActivity {
 
     private Button BtnDangnhap;
     private EditText EtUsername, EtPassword;
+    public Connection connection;
+
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,30 +43,22 @@ public class Dangnhap extends AppCompatActivity {
                 if(TextUtils.isEmpty(Username) && TextUtils.isEmpty(Password)) {
                     Toast.makeText(Dangnhap.this, "Please enter user name and password", Toast.LENGTH_SHORT).show();
                 }
-
-                // calling a method to login our user.
-                loginUser(Username, Password);
+                else{
+                    try{
+                        ConnectionHelper connectionHelper = new ConnectionHelper();
+                        connection = connectionHelper.conn();
+                        if(connection != null){
+                            String = "SELECT pqu_id FROM phanquyenuser"
+                        }
+                    }
+                    catch (SQLException e){
+                    }
+                }
             }
         });
     }
 
-    private void loginUser(String userName, String password) {
-        // calling a method to login a user.
-        ParseUser.logInInBackground(userName, password, (parseUser, e) -> {
-            // after login checking if the user is null or not.
-            if (parseUser != null) {
-                // if the user is not null then we will display a toast message
-                // with user login and passing that user to new activity.
-
-                Toast.makeText(this, "Login Successful ", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(Dangnhap.this, Trangchu.class);
-                i.putExtra("username", userName);
-                startActivity(i);
-            } else {
-                // display an toast message when user logout of the app.
-                ParseUser.logOut();
-                Toast.makeText(Dangnhap.this, e.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+    private void CheckQuyenTruyCap (String qpu_id) {
     }
+
 }

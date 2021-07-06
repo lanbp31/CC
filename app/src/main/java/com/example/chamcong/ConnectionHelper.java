@@ -7,15 +7,17 @@ import android.util.Log;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ConnectionHelper {
     @SuppressLint("NewApi")
-    public static Connection conn() {
+    public Connection conn() {
 
         String username = "";
         String password = "";
         String db = "";
         String ip = "";
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                 .permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -37,5 +39,6 @@ public class ConnectionHelper {
         }
         return conn;
     }
+
 }
 

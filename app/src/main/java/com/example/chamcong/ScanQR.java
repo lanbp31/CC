@@ -55,6 +55,13 @@ public class ScanQR extends AppCompatActivity {
                 codeScanner.startPreview();
             }
         });
+
+        resultData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultData.setText("Bạn đã chấm công thành công");
+            }
+        });
     }
 
     @Override
