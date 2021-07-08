@@ -56,51 +56,55 @@
                 />
         </LinearLayout>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="-415dp">
-        <Button
-            android:id="@+id/scanBtn"
-            android:layout_width="180sp"
-            android:layout_height="120sp"
-            android:backgroundTint="@color/black"
-            android:text="CHẤM CÔNG"
-            android:textAlignment="center"
-            android:layout_marginLeft="20dp"
-            />
-        <Button
-            android:id="@+id/infoBtn"
-            android:layout_width="180sp"
-            android:layout_height="120sp"
-            android:backgroundTint="@color/black"
-            android:text="THÔNG TIN CÁ NHÂN"
-            android:textAlignment="center"
-            android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@id/scanBtn"
-            />
+        android:layout_marginStart="-425dp"
+        android:layout_marginTop="300dp">
+
         <Button
             android:id="@+id/historyBtn"
             android:layout_width="180sp"
             android:layout_height="120sp"
-            android:backgroundTint="@color/black"
-            android:text="LỊCH SỬ CHẤM CÔNG"
-            android:textAlignment="center"
-            android:layout_marginLeft="20dp"
             android:layout_below="@id/scanBtn"
-            />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="@color/black"
+            android:text="LỊCH SỬ\n CHẤM CÔNG"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/scanBtn"
+            android:layout_width="180sp"
+            android:layout_height="120sp"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="@color/black"
+            android:text="CHẤM CÔNG"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/logoutBtn"
             android:layout_width="180sp"
             android:layout_height="120sp"
+            android:layout_below="@id/infoBtn"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/historyBtn"
             android:backgroundTint="@color/black"
             android:text="ĐĂNG XUẤT"
-            android:textAlignment="center"
-            android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@id/historyBtn"
-            android:layout_below="@id/infoBtn"
-            />
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/infoBtn"
+            android:layout_width="180sp"
+            android:layout_height="120sp"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/scanBtn"
+            android:backgroundTint="@color/black"
+            android:text="THÔNG TIN\n CÁ NHÂN"
+            android:textAlignment="center" />
+
     </RelativeLayout>
 
 </LinearLayout>
