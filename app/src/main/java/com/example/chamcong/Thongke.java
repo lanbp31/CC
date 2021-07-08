@@ -9,13 +9,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class Lichsuchamcong extends AppCompatActivity {
+public class Thongke extends AppCompatActivity {
+
     private ViewPager pager;
     private TabLayout tabLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lichsuchamcong);
+        setContentView(R.layout.activity_thongke);
         addControl();
     }
 

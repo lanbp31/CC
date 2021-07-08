@@ -11,22 +11,9 @@
     android:background="#2A3137"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/c"
-            android:layout_width="221dp"
-            android:layout_height="149dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="80dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="220dp"
-            android:text="C"
-            android:textColor="#2A3137"
-            android:textSize="100sp"
-            android:gravity="top"
-            />
 
         <View
             android:id="@+id/ellipse_1"
@@ -34,22 +21,36 @@
             android:layout_height="181dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="-250dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="120dp"
             android:background="@drawable/ellipse_1" />
+        <TextView
+            android:id="@+id/c"
+            android:layout_width="221dp"
+            android:layout_height="220dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="100dp"
+            android:gravity="top"
+            android:text="C"
+            android:textStyle="italic"
+            android:textColor="#2A3137"
+            android:textSize="180dp" />
+
         <TextView
             android:id="@+id/mei"
             android:layout_width="175dp"
             android:layout_height="119dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="-50dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="250dp"
+            android:layout_marginLeft="136dp"
+            android:layout_marginTop="213dp"
+            android:gravity="top"
             android:text="Mei"
-            android:textSize="100sp"
-            android:textStyle="bold"
             android:textColor="@color/white"
-            android:gravity="top" />
+            android:textSize="80sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnDN"
@@ -57,13 +58,13 @@
             android:layout_height="63dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="-300dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="380dp"
             android:backgroundTint="@color/white"
             android:radius="10dp"
             android:text="ĐĂNG NHẬP"
-            android:textColor="#E1512C"/>
-    </LinearLayout>
+            android:textColor="#E1512C" />
+    </RelativeLayout>
 
 
 </LinearLayout>
