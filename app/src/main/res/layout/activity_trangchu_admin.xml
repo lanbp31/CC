@@ -60,7 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:layout_marginTop="320dp"
-        android:layout_marginLeft="-415dp">
+        android:layout_marginLeft="-425dp">
         <Button
             android:id="@+id/scanBtn"
             android:layout_width="180sp"
@@ -91,7 +91,7 @@
             android:layout_below="@id/scanBtn"
             />
         <Button
-            android:id="@+id/manageuBtn"
+            android:id="@+id/manageuserBtn"
             android:layout_width="180sp"
             android:layout_height="80sp"
             android:backgroundTint="@color/black"
@@ -113,10 +113,10 @@
             />
 
         <Button
-            android:id="@+id/managedeBtn"
+            android:id="@+id/managedepBtn"
             android:layout_width="180sp"
             android:layout_height="80sp"
-            android:layout_below="@id/manageuBtn"
+            android:layout_below="@id/manageuserBtn"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/manageposBtn"
             android:backgroundTint="@color/black"
@@ -134,10 +134,10 @@
             />
 
         <Button
-            android:id="@+id/btnhome8"
+            android:id="@+id/logoutBtn"
             android:layout_width="180sp"
             android:layout_height="80sp"
-            android:layout_below="@id/managedeBtn"
+            android:layout_below="@id/managedepBtn"
             android:layout_toRightOf="@id/statisticalBtn"
             android:backgroundTint="@color/black"
             android:text="ĐĂNG XUẤT"

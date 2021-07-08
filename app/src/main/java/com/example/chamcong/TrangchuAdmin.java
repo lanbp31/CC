@@ -11,16 +11,21 @@ import android.widget.Button;
 
 public class TrangchuAdmin extends AppCompatActivity {
 
-    Button scanBtn, logoutBtn, historyBtn, infoBtn;
+    Button scanBtn, logoutBtn, historyBtn, infoBtn, manageuserBtn,
+                        manageposBtn, managedepBtn, statisticalBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trangchu);
+        setContentView(R.layout.activity_trangchu_admin);
         scanBtn = findViewById(R.id.scanBtn);
         logoutBtn = findViewById(R.id.logoutBtn);
         historyBtn = findViewById(R.id.historyBtn);
         infoBtn = findViewById(R.id.infoBtn);
+        managedepBtn = findViewById(R.id.managedepBtn);
+        manageposBtn = findViewById(R.id.manageposBtn);
+        manageuserBtn = findViewById(R.id.manageuserBtn);
+        statisticalBtn = findViewById(R.id.statisticalBtn);
 
         scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
