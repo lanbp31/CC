@@ -16,21 +16,24 @@
         <activity android:name=".SuaPhongBan" />
         <activity android:name=".ThemPhongBan" />
         <activity android:name=".QuanLyPhongBan" />
-        <activity android:name=".Thongke" />
-        <activity android:name=".ThemNhanVien" />
-        <activity android:name=".TestTabLayoutActivity" />
-        <activity android:name=".Lichsuchamcong">
+        <activity android:name=".Thongke" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ThemNhanVien" />
+        <activity android:name=".TestTabLayoutActivity" />
+        <activity android:name=".Lichsuchamcong">
+
+        </activity>
         <activity android:name=".Doimatkhau" />
         <activity android:name=".Thongtinuser" />
         <activity android:name=".ScanQR" />
-        <activity android:name=".TrangchuAdmin" />
-        <activity android:name=".Trangchu" />
+        <activity android:name=".TrangchuAdmin" >
+        </activity>
+        <activity android:name=".Trangchu" ></activity>
         <activity android:name=".Dangnhap" />
         <activity android:name=".Xoachucvu" />
         <activity android:name=".Xoanhanvien" />

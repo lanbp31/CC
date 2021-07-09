@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Doimatkhau"
-    android:orientation="horizontal">
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="114dp"
@@ -20,14 +20,15 @@
             android:text="Đổi mật khẩu"
             android:textColor="@color/white"
             android:textSize="23sp"
+            android:textAlignment="center"
             android:gravity="center_horizontal|center_vertical"
             />
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_marginTop="115dp"
-        android:layout_marginLeft="-410dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="0dp">
         <EditText
             android:id="@+id/newpw"
             android:layout_width="350dp"
@@ -40,14 +41,15 @@
             android:id="@+id/newpw2"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="25dp"
+            android:layout_below="@id/newpw"
             android:text="Nhập lại mật khẩu mới"
             android:textColor="#C4C4C4" />
         <Button
             android:layout_width="150dp"
             android:layout_height="52dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="130dp"
             android:text="LƯU"
             android:textColor="#E1512C"

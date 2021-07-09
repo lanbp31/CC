@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Dangnhap"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
 
     <RelativeLayout
@@ -34,16 +34,17 @@
             android:layout_height="0dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="-300dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="52dp"
+            android:layout_above="@id/text1"
             android:background="@drawable/line_1" />
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="410dp"
         android:layout_height="300dp"
-        android:layout_marginLeft="-410dp"
-        android:layout_marginTop="280dp">
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp">
         <EditText
             android:id="@+id/username"
             android:layout_width="350dp"
@@ -56,8 +57,9 @@
             android:id="@+id/password"
             android:layout_width="350dp"
             android:layout_height="52dp"
-            android:layout_marginLeft="-350dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/username"
             android:padding="5dp"
             android:text="Mật khẩu"
             android:textColor="#C4C4C4"/>
@@ -65,11 +67,12 @@
             android:id="@+id/btnlogin"
             android:layout_width="250dp"
             android:layout_height="52dp"
-            android:layout_marginLeft="-300dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/password"
             android:backgroundTint="@color/black"
             android:text="ĐĂNG NHẬP"
             />
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

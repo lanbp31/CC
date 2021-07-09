@@ -22,6 +22,7 @@
             android:textSize="20sp"
             android:textStyle="bold" />
         <TextView
+            android:id="@+id/weektitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
@@ -31,5 +32,12 @@
             android:textColor="#E1512C"
             android:textSize="23sp"
             android:textStyle="bold"/>
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/weekChart"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_below="@id/weektitle"
+            android:layout_marginTop="20dp"/>
+
     </RelativeLayout>
 </LinearLayout>

@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Thongtinuser"
-    android:orientation="horizontal">
+    android:orientation="vertical">
     <LinearLayout
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#2A3137">
         <TextView
@@ -20,15 +20,16 @@
             android:text="Thông tin cá nhân"
             android:textColor="@color/white"
             android:textSize="23sp"
+            android:textAlignment="center"
             android:gravity="center_horizontal|center_vertical"
             />
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="435dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="-410dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+        android:orientation="vertical">
         <EditText
             android:id="@+id/hoten"
             android:layout_width="350dp"
@@ -41,95 +42,96 @@
             android:id="@+id/sdt"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginTop="65dp"
-            android:layout_marginLeft="-350dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@id/hoten"
             android:text="Số điện thoại"
             android:textColor="#C4C4C4" />
         <EditText
             android:id="@+id/gioitinh"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginTop="115dp"
-            android:layout_marginLeft="-350dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@id/sdt"
             android:text="Giới tính"
             android:textColor="#C4C4C4"/>
         <EditText
             android:id="@+id/email"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginTop="167dp"
-            android:layout_marginLeft="-352dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@id/gioitinh"
             android:text="Email"
             android:textColor="#C4C4C4"/>
         <EditText
             android:id="@+id/diachi"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginTop="218dp"
-            android:layout_marginLeft="-350dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@id/email"
             android:text="Địa chỉ"
             android:textColor="#C4C4C4"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="275dp"
-            android:layout_marginLeft="-400dp">
+
             <EditText
                 android:id="@+id/phuong"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginTop="5dp"
+                android:layout_below="@id/diachi"
                 android:text="Phường"
                 android:textColor="#C4C4C4"
                 android:textAlignment="center" />
-            <EditText
-                android:id="@+id/quan"
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:text="Quận"
-                android:textColor="#C4C4C4"
-                android:textAlignment="center" />
-            <EditText
+
+        <EditText
+            android:id="@+id/quan"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginTop="286dp"
+            android:layout_toRightOf="@+id/phuong"
+            android:text="Quận"
+            android:textAlignment="center"
+            android:textColor="#C4C4C4" />
+
+        <EditText
                 android:id="@+id/tp"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="286dp"
+                android:layout_toRightOf="@+id/quan"
                 android:text="Thành phố"
                 android:textColor="#C4C4C4"
                 android:textAlignment="center" />
-        </LinearLayout>
-        <EditText
+        <TextView
+            android:id="@+id/chucvu"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginTop="325dp"
-            android:layout_marginLeft="-385dp"
+            android:layout_marginTop="335dp"
+            android:layout_marginLeft="25dp"
+            android:layout_above="@+id/bophan"
             android:text="Chức vụ"
             android:textColor="#C4C4C4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <EditText
+            android:textSize="18sp" />
+        <TextView
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:layout_marginTop="377dp"
-            android:layout_marginLeft="-350dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_below="@+id/chucvu"
             android:text="Bộ phận"
             android:textColor="#C4C4C4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </LinearLayout>
+            android:textSize="18sp" />
+    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="540dp"
-        android:layout_marginLeft="-410dp" >
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="0dp">
         <Button
             android:id="@+id/btnnewpw"
             android:layout_width="150dp"
@@ -149,9 +151,9 @@
             android:textAlignment="center"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="0dp"
+            android:layout_marginRight="35dp"
             android:layout_toRightOf="@id/btnnewpw"
             android:backgroundTint="@color/black"/>
     </RelativeLayout>
-
 
 </LinearLayout>

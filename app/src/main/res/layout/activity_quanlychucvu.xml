@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Quanlychucvu"
-    android:orientation="horizontal">
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="114dp"
@@ -20,13 +20,14 @@
             android:text="Quản lý chức vụ"
             android:textColor="@color/white"
             android:textSize="23sp"
+            android:textAlignment="center"
             android:gravity="center_horizontal|center_vertical" />
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="115dp"
-        android:layout_marginLeft="-415dp">
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="0dp">
         <Button
             android:id="@+id/btnThemnv"
             android:layout_width="350dp"
