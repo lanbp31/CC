@@ -1,7 +1,9 @@
 package com.example.chamcong;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -43,19 +45,31 @@ public class Trangchu extends AppCompatActivity {
             }
         });
 
-//        logoutBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // calling a method to logout our user.
-//                ParseUser.logOutInBackground(e -> {
-//                    if (e == null) {
-//                        Toast.makeText(Trangchu.this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
-//                        Intent i = new Intent(Trangchu.this, MainActivity.class);
-//                        startActivity(i);
-//                        finish();
-//                    }
-//                });
-//            }
-//        });
+        Intent in = getIntent();
+        String string = in.getStringExtra("message");
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(Trangchu.this);
+                builder.setTitle("Xác nhận đăng xuất").
+                        setMessage("Bạn muốn đăng xuất?");
+                builder.setPositiveButton("Có",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent i = new Intent(getApplicationContext(),
+                                        MainActivity.class);
+                                startActivity(i);
+                            }
+                        });
+                builder.setNegativeButton("Không",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert11 = builder.create();
+                alert11.show();
+            }
+        });
     }
 }
