@@ -2,6 +2,7 @@ package com.example.chamcong;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,26 +25,27 @@ import static com.android.volley.Request.Method.GET;
 public class Quanlynhanvien extends AppCompatActivity {
     String URL = "http://chamcong.somee.com/api/Users";
     String data = "";
-    ListView ds_nhanvien;
-    RequestQueue requestQueue;
+    private TextView ds_nhanvien;
+    private RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quanlynhanvien);
+
         requestQueue = Volley.newRequestQueue(this);
 
-        ds_nhanvien = (ListView) findViewById(R.id.dsnv);
+        ds_nhanvien = (TextView) findViewById(R.id.dsnv);
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, URL, null,
-                new Response.Listener<JSONArray>() {
+        JsonObjectRequest jsonObjectRequestRequest = new JsonObjectRequest(Request.Method.GET, URL, null,
+                new Response.Listener<JSONObject>() {
                     @Override
-                    public void onResponse(JSONArray response) {
+                    public void onResponse(JSONObject response) {
                         try {
-                            JSONArray jsonArray = response;
+                            JSONArray jsonArray = response.getJSONArray("users");
 
                             for(int i = 0; i < jsonArray.length(); i++){
-                                JSONObject jsonObject = response.getJSONObject(i);
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
                                 String user_hoten = jsonObject.getString("User_hoten");
                                 String user_email = jsonObject.getString("User_email");
                                 String chucvu = jsonObject.getString("cv_ten");
@@ -51,7 +53,7 @@ public class Quanlynhanvien extends AppCompatActivity {
 
                                 data += user_hoten + "\n" + user_email + "\n" + chucvu + "\n" + phongban;
                             }
-                            ds_nhanvien.setFilterText(data);
+                            ds_nhanvien.setText(data);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -65,7 +67,7 @@ public class Quanlynhanvien extends AppCompatActivity {
                     }
                 }
         );
-        requestQueue.add(jsonArrayRequest);
+        requestQueue.add(jsonObjectRequestRequest);
     }
 }
 
