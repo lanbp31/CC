@@ -1,7 +1,9 @@
 package com.example.chamcong;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,16 +29,38 @@ public class Quanlynhanvien extends AppCompatActivity {
     String data = "";
     private TextView ds_nhanvien;
     private RequestQueue requestQueue;
+    private Button timNhanvienBtn, themNhanvienBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quanlynhanvien);
 
-        requestQueue = Volley.newRequestQueue(this);
-
         ds_nhanvien = (TextView) findViewById(R.id.dsnv);
+        timNhanvienBtn = (Button) findViewById(R.id.btnTimnv);
+        themNhanvienBtn = (Button) findViewById(R.id.btnThemnv);
 
+        themNhanvienBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Quanlynhanvien.this, ThemNhanVien.class);
+                startActivity(i);
+            }
+        });
+
+        timNhanvienBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+        requestQueue = Volley.newRequestQueue(this);
+        parseJSON();
+    }
+
+    private void parseJSON() {
         JsonObjectRequest jsonObjectRequestRequest = new JsonObjectRequest(Request.Method.GET, URL, null,
                 new Response.Listener<JSONObject>() {
                     @Override
