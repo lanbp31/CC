@@ -35,7 +35,7 @@ public class Quanlychucvu extends AppCompatActivity {
     RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager layoutManager;
 
-    List<Chucvu> personUtilsList;
+    List<Chucvu> chucvuList;
 
     RequestQueue rq;
 
@@ -58,7 +58,7 @@ public class Quanlychucvu extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManager);
 
-        personUtilsList = new ArrayList<>();
+        chucvuList = new ArrayList<>();
 
         sendRequest();
 
@@ -94,11 +94,11 @@ public class Quanlychucvu extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                    personUtilsList.add(chucvu);
+                    chucvuList.add(chucvu);
 
                 }
 
-                mAdapter = new DSCVAdapter(Quanlychucvu.this, personUtilsList);
+                mAdapter = new DSCVAdapter(Quanlychucvu.this, chucvuList);
 
                 recyclerView.setAdapter(mAdapter);
 
