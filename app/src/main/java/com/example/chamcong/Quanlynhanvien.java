@@ -96,7 +96,7 @@ public class Quanlynhanvien extends AppCompatActivity {
 
         rq = Volley.newRequestQueue(this);
 
-        recyclerView = (RecyclerView) findViewById(R.id.cvRecycleview);
+        recyclerView = (RecyclerView) findViewById(R.id.nvRecycleview);
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(this);
