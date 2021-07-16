@@ -1,11 +1,14 @@
 package com.example.chamcong;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,23 +47,25 @@ public class Thongtinuser extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String ht, dt, gt, eml, dc, phg, qun, tpho;
-                ht = hoten.getText().toString();
-                dt = sdt.getText().toString();
-                gt = gioitinh.getText().toString();
-                eml = email.getText().toString();
-                phg = phuong.getText().toString();
-                qun = quan.getText().toString();
-                tpho = tp.getText().toString();
+                String u_hoten, u_sdt, u_gioitinh, u_email, u_phuong, u_quan, u_tp;
+                u_hoten = hoten.getText().toString();
+                u_sdt = sdt.getText().toString();
+                u_gioitinh = gioitinh.getText().toString();
+                u_email = email.getText().toString();
+                u_phuong = phuong.getText().toString();
+                u_quan = quan.getText().toString();
+                u_tp = tp.getText().toString();
 
                 ConnectionHelper conn = new ConnectionHelper();
+                connect = conn.CONN();
             }
         });
 
         btnnewpw.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
+            public void onClick(View v) {
+                Intent i = new Intent(Thongtinuser.this, Doimatkhau.class);
+                startActivity(i);
             }
         });
     }
@@ -74,9 +79,44 @@ public class Thongtinuser extends AppCompatActivity {
                         ",'"+ u_tp +"');";
                 Statement st = connect.createStatement();
                 ResultSet result = st.executeQuery(query);
+                if(result.next())
+                {
+
+                    Toast.makeText(Thongtinuser.this, "Cập nhật thành công.",
+                            Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(Thongtinuser.this, "Lỗi! Vui lòng thử lại.",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         }
-        catch (Exception e){
+        catch (Exception ex){
+            Log.e("Error:", ex.getMessage());
+        }
+    }
+
+    public void showdata (View v){
+        try {
+            ConnectionHelper connHelper = new ConnectionHelper();
+            connect = connHelper.CONN();
+            if(connect != null){
+
+                String query1 = "SELECT cv_ten FROM Phongbans WHERE cv_id = u_id";
+                Statement st1 = connect.createStatement();
+                ResultSet result1 = st1.executeQuery(query1);
+
+                String query2 = "SELECT pb_ten FROM Phongbans WHERE pb_id = u_id";
+                Statement st2 = connect.createStatement();
+                ResultSet result2 = st1.executeQuery(query2);
+
+                while (result1.next() && result2.next()){
+                    chucvu.setText(result1.getString(String.valueOf(chucvu)));
+                    bophan.setText(result2.getString(String.valueOf(bophan)));
+                }
+            }
+        }catch (Exception e){
 
         }
     }
