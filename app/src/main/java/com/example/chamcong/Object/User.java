@@ -11,17 +11,17 @@ public class User {
     private String User_gioitinh;
 
 
-    public User(String user_hoten, String user_email) {
-        this.User_name = user_hoten;
-        this.User_hoten = user_email;
-    }
+//    public User() {
+//        this.User_name = user_hoten;
+//        this.User_hoten = user_email;
+//    }
 
     public String getUser_email() {
         return User_email;
     }
 
     public void setUser_email(String user_email) {
-        User_email = user_email;
+        this.User_email = user_email;
     }
 
     public String getUser_sdt() {
@@ -53,7 +53,7 @@ public class User {
     }
 
     public void setUser_hoten(String user_hoten) {
-        User_hoten = user_hoten;
+        this.User_hoten = user_hoten;
     }
 
     public String getUser_diachi() {
@@ -77,7 +77,7 @@ public class User {
     }
 
     public void setUser_id(int user_id) {
-        User_id = user_id;
+        this.User_id = user_id;
     }
 
 }

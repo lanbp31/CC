@@ -29,7 +29,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="0dp">
         <Button
-            android:id="@+id/btnThemnv"
+            android:id="@+id/btnThemcv"
             android:layout_width="350dp"
             android:layout_height="52dp"
             android:layout_marginLeft="35dp"
@@ -41,7 +41,7 @@
             android:textSize="18dp"/>
         <SearchView
             android:id="@+id/search"
-            android:layout_below="@id/btnThemnv"
+            android:layout_below="@id/btnThemcv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -49,6 +49,7 @@
             android:queryHint="Tìm kiếm chức vụ">
             <requestFocus />
         </SearchView>
+
         <TextView
             android:id="@+id/title"
             android:layout_width="290dp"
@@ -63,6 +64,15 @@
             android:textColor="#E1512C"
             android:textAlignment="center"
             android:gravity="center_horizontal|center_vertical" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cvRecycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"/>
     </RelativeLayout>
+
 
 </LinearLayout>

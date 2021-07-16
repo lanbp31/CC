@@ -6,46 +6,67 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.chamcong.Object.Chucvu;
 import com.example.chamcong.R;
 import com.example.chamcong.Object.User;
 
 import java.util.List;
 
-public class DSNVAdapter extends ArrayAdapter<User> {
-    //the hero list that will be displayed
-    private List<User> Userlist;
+public class DSNVAdapter extends RecyclerView.Adapter<DSNVAdapter.ViewHolder> {
+    List<User> userList;
+    Context Context;
 
-    //the context object
-    private Context mCtx;
-
-    public DSNVAdapter(List<User> heroList, Context mCtx) {
-        super(mCtx, R.layout.dsnv, heroList);
-        this.Userlist = heroList;
-        this.mCtx = mCtx;
+    public DSNVAdapter(List<User> userList, Context Context) {
+        this.userList = userList;
+        this.Context = Context;
+    }
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.dsnv, parent, false);
+        ViewHolder viewHolder = new ViewHolder(v);
+        return viewHolder;
     }
 
-    //this method will return the list item
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        //getting the layoutinflater
-        LayoutInflater inflater = LayoutInflater.from(mCtx);
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.itemView.setTag(userList.get(position));
 
-        //creating a view with our xml layout
-        View listViewItem = inflater.inflate(R.layout.dsnv, null, true);
+        User user = userList.get(position);
 
-        //getting text views
-        TextView hoten = listViewItem.findViewById(R.id.hoten);
-        TextView email = listViewItem.findViewById(R.id.email);
+//        holder.cv_ten.setText(pu.getPersonFirstName()+" "+pu.getPersonLastName());
+        holder.hoten.setText(user.getUser_hoten());
+        holder.email.setText(user.getUser_email());
+    }
 
-        //Getting the hero for the specified position
-        User user = Userlist.get(position);
+    public int getItemCount() {
+        return userList.size();
+    }
 
-        //setting hero values to textviews
-        hoten.setText(user.getUser_hoten());
-        email.setText(user.getUser_email());
+    public class ViewHolder extends RecyclerView.ViewHolder {
+//        TextView id;
+        private TextView hoten, email;
+//        private ImageView avatar;
 
-        //returning the listitem
-        return listViewItem;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            hoten = itemView.findViewById(R.id.hoten);
+            email = itemView.findViewById(R.id.email);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    User user = (User) view.getTag();
+
+                    Toast.makeText(view.getContext(), user.getUser_hoten()+ "\n" + user.getUser_email(),
+                            Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
+        }
     }
 }
