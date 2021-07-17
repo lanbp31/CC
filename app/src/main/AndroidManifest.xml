@@ -17,11 +17,7 @@
         <activity android:name=".ThemPhongBan" />
         <activity android:name=".QuanLyPhongBan" />
         <activity android:name=".Thongke" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ThemNhanVien" />
         <activity android:name=".TestTabLayoutActivity" />
@@ -39,8 +35,16 @@
         <activity android:name=".Xoanhanvien" />
         <activity android:name=".Suachucvu" />
         <activity android:name=".Themchucvu" />
-        <activity android:name=".Quanlychucvu" />
-        <activity android:name=".Quanlynhanvien" />
+        <activity android:name=".Quanlychucvu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".Quanlynhanvien">
+        </activity>
         <activity android:name=".Dieuchinhnhanvien" />
 
         <meta-data

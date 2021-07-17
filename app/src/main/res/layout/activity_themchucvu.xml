@@ -38,7 +38,7 @@
             android:text="Tên chức vụ"
             android:textColor="#C4C4C4" />
         <Button
-            android:id="@+id/btnThem"
+            android:id="@+id/themcvBtn"
             android:layout_width="150dp"
             android:layout_height="52dp"
             android:layout_below="@+id/tencv"
