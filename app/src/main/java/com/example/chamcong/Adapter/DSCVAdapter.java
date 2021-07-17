@@ -24,6 +24,10 @@ public class DSCVAdapter extends RecyclerView.Adapter<DSCVAdapter.ViewHolder> {
         this.chucvuList = chucvuList;
     }
 
+    public DSCVAdapter(List<Chucvu> chucvuList) {
+        this.chucvuList = chucvuList;
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.dscv, parent, false);

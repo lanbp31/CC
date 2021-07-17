@@ -62,6 +62,7 @@ public class Quanlychucvu extends AppCompatActivity {
 
         sendRequest();
 
+        // Them chuc vu
         themChucvuBtn = (Button) findViewById(R.id.btnThemcv);
         themChucvuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +73,7 @@ public class Quanlychucvu extends AppCompatActivity {
         });
     }
 
+    // In danh sach chuc vu
     public void sendRequest(){
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, request_url, null,
