@@ -47,6 +47,7 @@
             android:text="Nhập lại mật khẩu mới"
             android:textColor="#C4C4C4" />
         <Button
+            android:id="@+id/btnSavepw"
             android:layout_width="150dp"
             android:layout_height="52dp"
             android:layout_marginTop="30dp"
