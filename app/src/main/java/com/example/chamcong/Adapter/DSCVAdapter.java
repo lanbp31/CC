@@ -4,8 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,62 +14,53 @@ import com.example.chamcong.R;
 
 import java.util.List;
 
+
 public class DSCVAdapter extends RecyclerView.Adapter<DSCVAdapter.ViewHolder> {
 
-    private Context context;
-    private List<Chucvu> chucvuList;
+    Context context;
+    List<Chucvu> chucvuList;
 
-    public DSCVAdapter(Context context, List chucvuList) {
+    public DSCVAdapter(List<Chucvu> chucvuList, Context context) {
         this.context = context;
         this.chucvuList = chucvuList;
     }
 
-    public DSCVAdapter(List<Chucvu> chucvuList) {
-        this.chucvuList = chucvuList;
-    }
+//    public DSCVAdapter(List<Chucvu> chucvuList) {
+//        this.chucvuList = chucvuList;
+//    }
+    public int getItemCount() {
+    return chucvuList.size();
+}
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.dscv, parent, false);
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.dscv, parent, false);
+        return new ViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.itemView.setTag(chucvuList.get(position));
-
         Chucvu chucvu = chucvuList.get(position);
 
-//        holder.cv_ten.setText(pu.getPersonFirstName()+" "+pu.getPersonLastName());
-        holder.cv_ten.setText(chucvu.getCv_ten());
+        holder.cv_ten.setText(chucvu.cv_ten);
+//        holder.cv_id.setText(String.valueOf(chucvu.cv_id));
+
     }
 
-    public int getItemCount() {
-        return chucvuList.size();
-    }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView cv_ten;
+    public static class ViewHolder extends RecyclerView.ViewHolder{
 
+        public TextView cv_ten, cv_id;
+//        public ImageView ivAvatar;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             cv_ten = (TextView) itemView.findViewById(R.id.cv_ten);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    Chucvu chucvu = (Chucvu) view.getTag();
-
-                    Toast.makeText(view.getContext(), chucvu.getCv_ten()
-                            , Toast.LENGTH_SHORT).show();
-
-                }
-            });
+//            cv_id = (TextView) itemView.findViewById(R.id.cv_id);
+//            ivAvatar = (ImageView) itemView.findViewById(R.id.cv_avatar);
 
         }
     }

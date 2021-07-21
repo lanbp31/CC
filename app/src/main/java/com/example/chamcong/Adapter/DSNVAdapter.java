@@ -4,68 +4,62 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.chamcong.Object.Chucvu;
 import com.example.chamcong.R;
 import com.example.chamcong.Object.User;
 
 import java.util.List;
 
 public class DSNVAdapter extends RecyclerView.Adapter<DSNVAdapter.ViewHolder> {
+    Context context;
     List<User> userList;
-    Context Context;
 
-    public DSNVAdapter(List<User> userList, Context Context) {
+    public DSNVAdapter(List<User> userList, Context context) {
+        this.context = context;
         this.userList = userList;
-        this.Context = Context;
-    }
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.dsnv, parent, false);
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
     }
 
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.itemView.setTag(userList.get(position));
-
-        User user = userList.get(position);
-
-//        holder.cv_ten.setText(pu.getPersonFirstName()+" "+pu.getPersonLastName());
-        holder.hoten.setText(user.getUser_hoten());
-        holder.email.setText(user.getUser_email());
-    }
-
+    //    public DSCVAdapter(List<Chucvu> chucvuList) {
+//        this.chucvuList = chucvuList;
+//    }
     public int getItemCount() {
         return userList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-//        TextView id;
-        private TextView hoten, email;
-//        private ImageView avatar;
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.dsnv, parent, false);
+        return new ViewHolder(itemView);
+    }
 
-        public ViewHolder(@NonNull View itemView) {
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        User user = userList.get(position);
+//        Picasso.get()
+//                .load(user.avatar_url)
+//                .into(holder.nvAvatar);
+
+        holder.user_hoten.setText(user.User_hoten);
+//        holder.cv_id.setText(String.valueOf(chucvu.cv_id));
+
+    }
+
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+
+        public TextView user_hoten, cv_id;
+//        public ImageView nvAvatar;
+
+        public ViewHolder(View itemView) {
             super(itemView);
-            hoten = itemView.findViewById(R.id.hoten);
-            email = itemView.findViewById(R.id.email);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
 
-                    User user = (User) view.getTag();
-
-                    Toast.makeText(view.getContext(), user.getUser_hoten()+ "\n" + user.getUser_email(),
-                            Toast.LENGTH_SHORT).show();
-
-                }
-            });
+            user_hoten = (TextView) itemView.findViewById(R.id.nv_ten);
+//            nvAvatar = (ImageView) itemView.findViewById(R.id.nv_avatar);
 
         }
     }
