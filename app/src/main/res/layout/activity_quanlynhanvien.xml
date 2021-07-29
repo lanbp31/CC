@@ -5,95 +5,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Quanlynhanvien"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical">
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="114dp"-->
+    <!--        android:background="#2A3137">-->
 
-    <LinearLayout
+    <!--        <TextView-->
+    <!--            android:layout_width="285dp"-->
+    <!--            android:layout_height="40dp"-->
+    <!--            android:layout_alignParentLeft="true"-->
+    <!--            android:layout_alignParentTop="true"-->
+    <!--            android:layout_marginLeft="64dp"-->
+    <!--            android:layout_marginTop="45dp"-->
+    <!--            android:gravity="center_horizontal|center_vertical"-->
+    <!--            android:text="Quản lý chức vụ"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="23sp" />-->
+    <!--    </LinearLayout>-->
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginStart="0dp"-->
+    <!--        android:layout_marginTop="5dp">-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/btnThemcv"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_alignParentEnd="true"-->
+    <!--            android:layout_marginStart="5dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:layout_marginEnd="0dp"-->
+    <!--            android:backgroundTint="#241C1C"-->
+    <!--            android:text="Thêm chức vụ"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textColor="#E1512C"-->
+    <!--            android:textSize="18sp" />-->
+
+
+    <EditText
+        android:id="@+id/nvSearch"
         android:layout_width="match_parent"
-        android:layout_height="114dp"
-        android:background="#2A3137">
-        <TextView
-            android:layout_width="285dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="64dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="45dp"
-            android:text="Quản lý nhân viên"
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:textAlignment="center"
-            android:gravity="center_horizontal|center_vertical" />
-    </LinearLayout>
-    <RelativeLayout
+        android:layout_height="66dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints="Chuc vu"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="20dp"
+        android:padding="16dp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:hint="Tên nhân viên"
+        android:textSize="16sp"
+        app:queryHint="Tim Chuc Vu" />
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/title"-->
+    <!--            android:layout_below="@id/cvSearchbar"-->
+    <!--            android:layout_width="290dp"-->
+    <!--            android:layout_height="23dp"-->
+    <!--            android:layout_alignParentStart="true"-->
+    <!--            android:layout_alignParentTop="true"-->
+    <!--            android:layout_marginStart="43dp"-->
+    <!--            android:layout_marginTop="140dp"-->
+    <!--            android:gravity="center_horizontal|center_vertical"-->
+    <!--            android:text="Kết quả hiển thị"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textColor="#E1512C"-->
+    <!--            android:textSize="18sp" />-->
+
+    <ListView
+        android:id="@+id/nvListview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="0dp">
-        <Button
-            android:id="@+id/btnThemnv"
-            android:layout_width="350dp"
-            android:layout_height="52dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#241C1C"
-            android:text="Thêm nhân viên"
-            android:textAlignment="center"
-            android:textColor="#E1512C"
-            android:textSize="18dp"/>
-        <SearchView
-            android:id="@+id/btnTimnv"
-            android:layout_below="@id/btnThemnv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:iconifiedByDefault="false"
-            android:queryHint="Tìm kiếm nhân viên">
-            <requestFocus />
-        </SearchView>
-        <Spinner
-            android:id="@+id/chucvu"
-            android:layout_below="@+id/btnTimnv"
-            android:layout_width="205dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:entries="@array/spinner_data"/>
-        <Spinner
-            android:id="@+id/bophan"
-            android:layout_width="205dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/chucvu"
-            android:layout_below="@+id/btnTimnv"
-            android:entries="@array/spinner_data"/>
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="290dp"
-            android:layout_height="23dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="63dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="195dp"
-            android:layout_below="@id/chucvu"
-            android:text="Danh sách nhân viên"
-            android:textSize="18sp"
-            android:textColor="#E1512C"
-            android:gravity="center_horizontal|center_vertical" />
+        android:layout_below="@id/title"
+        android:layout_marginTop="10dp"
+        android:padding="16dp"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        tools:listitem="@layout/dsnv" />
 
+    <!--        <ProgressBar-->
+    <!--            android:id="@+id/progress_bar"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_centerInParent="true"-->
+    <!--            android:visibility="gone" />-->
+    <!--    </RelativeLayout>-->
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/nvRecycleview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/title"
-            android:layout_marginTop="10dp" />
-
-    </RelativeLayout>
 
 </LinearLayout>

@@ -30,7 +30,7 @@
         android:layout_marginTop="0dp"
         android:layout_marginLeft="0dp"
         android:orientation="vertical">
-        <EditText
+        <TextView
             android:id="@+id/hoten"
             android:layout_width="350dp"
             android:layout_height="50dp"
@@ -38,7 +38,7 @@
             android:layout_marginLeft="25dp"
             android:text="Họ và tên"
             android:textColor="#C4C4C4" />
-        <EditText
+        <TextView
             android:id="@+id/sdt"
             android:layout_width="350dp"
             android:layout_height="50dp"
@@ -47,7 +47,7 @@
             android:layout_below="@id/hoten"
             android:text="Số điện thoại"
             android:textColor="#C4C4C4" />
-        <EditText
+        <TextView
             android:id="@+id/gioitinh"
             android:layout_width="350dp"
             android:layout_height="50dp"
@@ -56,7 +56,7 @@
             android:layout_below="@id/sdt"
             android:text="Giới tính"
             android:textColor="#C4C4C4"/>
-        <EditText
+        <TextView
             android:id="@+id/email"
             android:layout_width="350dp"
             android:layout_height="50dp"
@@ -65,7 +65,7 @@
             android:layout_below="@id/gioitinh"
             android:text="Email"
             android:textColor="#C4C4C4"/>
-        <EditText
+        <TextView
             android:id="@+id/diachi"
             android:layout_width="350dp"
             android:layout_height="50dp"
@@ -75,7 +75,7 @@
             android:text="Địa chỉ"
             android:textColor="#C4C4C4"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/phuong"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
@@ -86,7 +86,7 @@
                 android:textColor="#C4C4C4"
                 android:textAlignment="center" />
 
-        <EditText
+        <TextView
             android:id="@+id/quan"
             android:layout_width="110dp"
             android:layout_height="40dp"
@@ -97,7 +97,7 @@
             android:textAlignment="center"
             android:textColor="#C4C4C4" />
 
-        <EditText
+        <TextView
                 android:id="@+id/tp"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
@@ -113,7 +113,6 @@
             android:layout_height="50dp"
             android:layout_marginTop="335dp"
             android:layout_marginLeft="25dp"
-            android:layout_above="@+id/bophan"
             android:text="Chức vụ"
             android:textColor="#C4C4C4"
             android:textSize="18sp" />
@@ -124,6 +123,7 @@
             android:layout_marginLeft="25dp"
             android:layout_below="@+id/chucvu"
             android:text="Bộ phận"
+            android:id="@+id/phongban"
             android:textColor="#C4C4C4"
             android:textSize="18sp" />
     </RelativeLayout>

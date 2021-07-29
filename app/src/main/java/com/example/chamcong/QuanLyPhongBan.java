@@ -1,74 +1,155 @@
 package com.example.chamcong;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.example.chamcong.Adapter.DSPBAdapter;
-import com.example.chamcong.Object.Phongban;
-import com.squareup.moshi.JsonAdapter;
-import com.squareup.moshi.Moshi;
-import com.squareup.moshi.Types;
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.List;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import com.example.chamcong.Adapter.DSPBAdapter;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class QuanLyPhongBan extends AppCompatActivity {
+    ListView lstData;
+    DSPBAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quanlyphongban);
 
-        // Khởi tạo RecyclerView.
-        final RecyclerView pbRecycleview = (RecyclerView) findViewById(R.id.pbRecycleview);
-        pbRecycleview.setLayoutManager(new LinearLayoutManager(this));
+        lstData = findViewById(R.id.pbListview);
 
-        // Khởi tạo OkHttpClient để lấy dữ liệu.
-        OkHttpClient client = new OkHttpClient();
+        new MyAsyncTask().execute();
 
-        // Khởi tạo Moshi adapter để biến đổi json sang model java (ở đây là User)
-        Moshi moshi = new Moshi.Builder().build();
-        Type usersType = Types.newParameterizedType(List.class, Phongban.class);
-        final JsonAdapter<List<Phongban>> jsonAdapter = moshi.adapter(usersType);
-
-        // Tạo request lên server.
-        okhttp3.Request request = new Request.Builder()
-                .url("http://chamcong.somee.com/api/Phongbans")
-                .build();
-
-        // Thực thi request.
-        client.newCall(request).enqueue(new Callback() {
+        lstData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("Error", "Network Error");
-            }
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
+                Intent intent = new Intent(QuanLyPhongBan.this, Thongtinphongban.class);
+                intent.putExtra("phongbandata",i);
+                startActivity(intent);
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-
-                // Lấy thông tin JSON trả về. Bạn có thể log lại biến json này để xem nó như thế nào.
-                String json = response.body().string();
-                final List<Phongban> phongban = jsonAdapter.fromJson(json);
-
-                // Cho hiển thị lên RecyclerView.
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        pbRecycleview.setAdapter(new DSPBAdapter(QuanLyPhongBan.this, phongban));
-                    }
-                });
             }
         });
     }
+
+    class MyAsyncTask extends AsyncTask {
+
+        ProgressDialog dialog;
+        JSONObject jsonObject = null;
+        JSONArray jsonArray = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = new ProgressDialog(QuanLyPhongBan.this);
+            dialog.show();
+
+        }
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+
+            StringBuffer response = new StringBuffer();
+
+            try {
+                URL url = new URL(MyUtil.URL_PHONGBAN);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                InputStreamReader ir = new InputStreamReader(urlConnection.getInputStream());
+                BufferedReader br = new BufferedReader(ir);
+                String inputLine = null;
+
+                while ((inputLine = br.readLine()) != null ){
+                    response.append(inputLine);
+                }
+                br.close();
+                ir.close();
+
+                MyUtil.jsonArrayPhongban = new JSONArray(response.toString());
+
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
+
+            /* ----------- End Using Internet this method ----------- */
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+
+//            adapter = new DSPBAdapter(QuanLyPhongBan.this,  MyUtil.jsonArrayPhongban);
+            adapter = new DSPBAdapter(QuanLyPhongBan.this,  MyUtil.jsonArrayPhongban);
+            lstData.setAdapter(adapter);
+
+            if (dialog.isShowing())dialog.dismiss();
+        }
+
+    }
+
 }
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_quanlyphongban);
+//
+//        // Khởi tạo RecyclerView.
+//        final RecyclerView pbRecycleview = (RecyclerView) findViewById(R.id.pbRecycleview);
+//        pbRecycleview.setLayoutManager(new LinearLayoutManager(this));
+//
+//        // Khởi tạo OkHttpClient để lấy dữ liệu.
+//        OkHttpClient client = new OkHttpClient();
+//
+//        // Khởi tạo Moshi adapter để biến đổi json sang model java (ở đây là User)
+//        Moshi moshi = new Moshi.Builder().build();
+//        Type usersType = Types.newParameterizedType(List.class, Phongban.class);
+//        final JsonAdapter<List<Phongban>> jsonAdapter = moshi.adapter(usersType);
+//
+//        // Tạo request lên server.
+//        okhttp3.Request request = new Request.Builder()
+//                .url("http://chamcong.somee.com/api/Phongbans")
+//                .build();
+//
+//        // Thực thi request.
+//        client.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                Log.e("Error", "Network Error");
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//
+//                // Lấy thông tin JSON trả về. Bạn có thể log lại biến json này để xem nó như thế nào.
+//                String json = response.body().string();
+//                final List<Phongban> phongban = jsonAdapter.fromJson(json);
+//
+//                // Cho hiển thị lên RecyclerView.
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        pbRecycleview.setAdapter(new DSPBAdapter(QuanLyPhongBan.this, phongban));
+//                    }
+//                });
+//            }
+//        });
+//    }
+//}
 
 //    Button themPhongbanBtn;
 //

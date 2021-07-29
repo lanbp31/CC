@@ -4,6 +4,7 @@
     <string name="Ngay_cham_cong">Ngày chấm công</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="app_name">Cham Cong</string>
+    <string name="tim_kiem">Tim kiem</string>
 
     <string-array name="spinner_data">Chức vụ
         <item>Cappuccino</item>
